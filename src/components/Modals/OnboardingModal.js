@@ -91,7 +91,7 @@ export default class OnboardingModal extends Component {
         <p>
           <i className="fa fa-spinner animate-spin" />
           <span className="animate-pulse-opacity">
-            Waiting for panda USB connection
+            Waiting for CANnect USB connection
           </span>
         </p>
       );
@@ -104,23 +104,11 @@ export default class OnboardingModal extends Component {
         <button onClick={this.navigateToExplorer} className="button--primary button--kiosk">
           <i className="fa fa-video-camera" />
           <strong>Find a drive in connect</strong>
-          <sup>Click "View in cabana" while replaying a drive</sup>
+          <sup>Click "View in CANExp" while replaying a drive</sup>
         </button>
       );
     } else {
       return <>
-        <a href={ AuthConfig.GOOGLE_REDIRECT_LINK } className="button button--primary button--icon">
-          <i className="fa fa-google" />
-          <strong>Sign in with Google</strong>
-        </a>
-        <button onClick={ () => window.AppleID.auth.signIn() } className="button button--primary button--icon">
-          <i className="fa fa-apple" />
-          <strong>Sign in with Apple</strong>
-        </button>
-        <a href={ AuthConfig.GITHUB_REDIRECT_LINK } className="button button--primary button--icon">
-          <i className="fa fa-github" />
-          <strong>Sign in with GitHub</strong>
-        </a>
       </>;
     }
   }
@@ -143,7 +131,7 @@ export default class OnboardingModal extends Component {
             <sup>
               Interactively stream car data over USB with
               {' '}
-              <em>panda</em>
+              <em>CANnect</em>
             </sup>
             {this.renderPandaEligibility()}
           </button>
@@ -218,18 +206,18 @@ export default class OnboardingModal extends Component {
           Don't have a
           {' '}
           <a
-            href="https://comma.ai/shop/products/panda"
+            href="https://autoro.co"
             target="_blank"
             rel="noopener noreferrer"
           >
-            panda
+            CANnect
           </a>
           ?
           {' '}
         </span>
         <span>
           <a
-            href="https://comma.ai/shop/products/panda"
+            href="https://autoro.co"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -250,7 +238,7 @@ export default class OnboardingModal extends Component {
   render() {
     return (
       <Modal
-        title="Welcome to Cabana"
+        title="Welcome to CANExp a Can explorer by AutoRo"
         subtitle="Get started by selecting a drive from connect or enabling live mode"
         footer={this.renderModalFooter()}
         disableClose

@@ -19,8 +19,8 @@ export default class LoadDbcModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tab: 'OpenDBC',
-      tabs: ['OpenDBC', 'GitHub', 'Upload'],
+      tab: 'Upload',
+      tabs: ['Upload'],
       dbc: null,
       dbcSource: null,
       userOpenDbcRepo: null
@@ -73,22 +73,7 @@ export default class LoadDbcModal extends Component {
 
   renderTabContent() {
     const { tab } = this.state;
-    if (tab === 'OpenDBC') {
-      return (
-        <GithubDbcList
-          onDbcLoaded={this.onDbcLoaded}
-          repo="commaai/opendbc"
-          openDbcClient={this.props.openDbcClient}
-        />
-      );
-    }
-    if (tab === 'GitHub') {
-      if (!this.props.openDbcClient.hasAuth()) {
-        return this.props.loginWithGithub;
-      }
-      if (this.state.userOpenDbcRepo === null) {
-        return <div>Fork it</div>;
-      }
+    
       return (
         <GithubDbcList
           onDbcLoaded={this.onDbcLoaded}
@@ -119,7 +104,7 @@ export default class LoadDbcModal extends Component {
     return (
       <Modal
         title="Load DBC File"
-        subtitle="Modify an existing DBC file with Cabana"
+        subtitle="Modify an existing DBC file with CANExp"
         handleClose={this.props.handleClose}
         navigation={this.renderTabNavigation()}
         actions={this.renderActions(Boolean(this.state.dbc === null))}

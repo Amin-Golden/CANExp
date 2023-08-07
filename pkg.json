@@ -1,0 +1,9 @@
+{
+    "name": "CANExp",
+    "version": "1.0.0",
+    "scripts": "src/index.js",
+    "targets": [
+      "node14-win-x64"
+    ]
+  }
+  
